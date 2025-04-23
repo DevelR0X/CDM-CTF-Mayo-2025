@@ -1,4 +1,4 @@
-# EPT
+# Q-Locker
 | Categoria | Dificultad  | Autor   |
 | ---       | ---         | ---     |
 | Crypto    | Media       | D-Cryp7 (powered by DevelR0X) |
