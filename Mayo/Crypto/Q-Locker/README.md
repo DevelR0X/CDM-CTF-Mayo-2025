@@ -1,7 +1,7 @@
 # Q-Locker
 | Categoria | Dificultad  | Autor   |
 | ---       | ---         | ---     |
-| Crypto    | Media       | D-Cryp7 (powered by DevelR0X) |
+| Crypto    | Medio       | D-Cryp7 (powered by DevelR0X) |
 
 ## Descripcion
 El equipo de ciberseguridad del Hospital Eloísa Díaz ha detectado un ataque dirigido contra los servidores del Proyecto Codex. Un ransomware cuántico (apodado "Q-Locker") ha cifrado los archivos críticos de investigación neurológica, incluyendo:

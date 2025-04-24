@@ -1,5 +1,5 @@
 # Waiting List I
-| Categoria | Dificultad  | Autor   |
+| Categoría | Dificultad  | Autor   |
 | ---       | ---         | ---     |
 | Crypto    | Medio       | D-Cryp7 (powered by DevelR0X) |
 
