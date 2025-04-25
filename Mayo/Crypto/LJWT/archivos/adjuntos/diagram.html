@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LJWT Auth Flow</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+</head>
+<body>
+    <div class="mermaid">
+sequenceDiagram
+    participant U as Usuario
+    participant S as Servidor
+    participant LJWT as Sistema LJWT
+
+    Note over S: Módulo público p disponible en<br/>.well-known/ljwks.json
+
+    rect rgb(255, 200, 200)
+        Note over U,S: Registro de Usuario
+        U->>S: POST /register<br/>{username, password, email}
+        Note over S: Nivel de acceso inicial: 1
+        S-->>U: Registro exitoso
+    end
+    
+    U->>S: POST /login<br/>{username, password}
+    
+    rect rgb(200, 200, 255)
+        Note over S,LJWT: Generación de Token
+        S->>LJWT: generate_token(user_data, key=(a,b,p))
+        LJWT-->>S: header.payload.signature
+    end
+    
+    S-->>U: Set-Cookie: token=header.payload.signature
+    
+    rect rgb(200, 255, 200)
+        Note over U,S: Acceso a Ruta Protegida
+        U->>S: GET /doctor/{id}/research<br/>Cookie: token=header.payload.signature
+        S->>LJWT: validate_token(token, key=(a,b,p))
+        Note over LJWT: Verifica firma usando<br/>AHS256 (Linear Hash)
+        LJWT-->>S: user_data o None
+    end
+    
+    alt Token Válido + Nivel de Acceso Suficiente
+        S-->>U: Datos de Investigación
+    else Token Inválido o Nivel Insuficiente
+        S-->>U: Error 401/403
+    end
+    </div>
+</body>
+</html>

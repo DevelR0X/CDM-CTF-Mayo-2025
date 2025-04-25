@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Eloísa Díaz - Portal de Acceso</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/base.css">
+    <link rel="stylesheet" href="../static/css/index_styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-blue-100 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <img src="/static/images/logo.png" alt="Hospital Eloísa Díaz" class="h-20 w-20">
+                <div>
+                    <h1 class="text-xl font-bold text-blue-800">Hospital Eloísa Díaz</h1>
+                    <p class="text-sm text-blue-800">Cuidamos tu salud con ciencia y humanidad</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="hero">
+            <div class="hero-text">
+                <h2>Bienvenido al Portal Neurológico</h2>
+                <p>El Hospital Eloísa Díaz, uno de los centros de salud más avanzados de Latinoamérica, le da la bienvenida a su sistema de registros neurológicos.</p>
+                <p>Este portal utiliza el sistema experimental de encriptación neuro-digital desarrollado por el equipo del Dr. Brinck Pasvahl.</p>
+                <p>Por favor, inicie sesión o registre una nueva cuenta para acceder a los registros médicos.</p>
+            </div>
+            <div class="hero-image"></div>
+        </div>
+        
+        <div class="auth-container">
+            <div class="auth-box">
+                <h2 class="auth-title">Iniciar Sesión</h2>
+                <div id="loginMessage"></div>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginUsername">Usuario</label>
+                        <input type="text" id="loginUsername" class="form-control" placeholder="Ingrese su usuario" value="">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="loginPassword">Contraseña</label>
+                        <input type="password" id="loginPassword" class="form-control" placeholder="Ingrese su contraseña" value="">
+                    </div>
+                    
+                    <button type="button" class="btn" onclick="login()">Ingresar</button>
+                </form>
+            </div>
+            
+            <div class="auth-box">
+                <h2 class="auth-title">Registrarse</h2>
+                <div id="registerMessage"></div>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="regUsername">Usuario</label>
+                        <input type="text" id="regUsername" class="form-control" placeholder="Cree un nombre de usuario">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="regEmail">Correo Electrónico</label>
+                        <input type="email" id="regEmail" class="form-control" placeholder="Ingrese su correo">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="regPassword">Contraseña</label>
+                        <input type="password" id="regPassword" class="form-control" placeholder="Cree una contraseña">
+                    </div>
+                    
+                    <button type="button" class="btn btn-secondary" onclick="register()">Registrarse</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Centro de Tecnología Médica - Hospital Eloísa Díaz © 2025</p>
+        <p>Desarrollado por el Departamento de Neurología Avanzada</p>
+    </footer>
+
+    <script>
+        function showMessage(elementId, message, type) {
+            const element = document.getElementById(elementId);
+            element.innerHTML = `<div class="alert alert-${type}">${message}</div>`;
+        }
+
+        function login() {
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+
+            fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                credentials: 'include',  // Para permitir envío de cookies
+                body: JSON.stringify({ username, password })
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error('Error de autenticación');
+            })
+            .then(data => {
+                // Redirigir después de login exitoso
+                window.location.href = '/dashboard';
+            })
+            .catch(error => {
+                showMessage('loginMessage', error.message, 'danger');
+            });
+        }
+
+        
+        function register() {
+            const username = document.getElementById('regUsername').value;
+            const email = document.getElementById('regEmail').value;
+            const password = document.getElementById('regPassword').value;
+            
+            if (!username || !email || !password) {
+                showMessage('registerMessage', 'Por favor complete todos los campos', 'danger');
+                return;
+            }
+            
+            fetch('/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    username,
+                    email,
+                    password
+                })
+            })
+            .then(response => {
+                if (!response.ok) throw new Error('Error en el registro');
+                return response.json();
+            })
+            .then(data => {
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+                showMessage('registerMessage', 'Registro exitoso! Ahora puede iniciar sesión', 'success');
+                document.getElementById('registerForm').reset();
+            })
+            .catch(error => {
+                showMessage('registerMessage', error.message, 'danger');
+            });
+        }
+    </script>
+</body>
+</html>
