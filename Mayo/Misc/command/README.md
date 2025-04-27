@@ -1,4 +1,4 @@
-# ChallengeTemplate
+# Command
 | Categoria | Dificultad  | Autor   |
 | ---       | ---         | ---     |
 | Misc    | Fácil      | - |

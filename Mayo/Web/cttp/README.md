@@ -1,4 +1,4 @@
-# LeakMe
+# CTTP
 | Categoria | Dificultad  | Autor   |
 | ---       | ---         | ---     |
 | Web    | Fácil       | kub0x (powered by DevelR0X) |
