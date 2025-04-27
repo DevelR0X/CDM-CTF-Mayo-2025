@@ -8,7 +8,7 @@
 | Misc    | [Q-Locker](Mayo/Misc/Q-Locker) | Explotar un _Known Plaintext Attack_ en la operación XOR, que es equivalente a la compuerta cuántica CNOT, para desencriptar archivos.       | ⭐⭐ |
 | Crypto    | [Waiting List I](Mayo/Crypto/Waiting%20List%20I) | Explotar el _Fermat Factorization Attack_ en RSA para firmar una cita antes que el resto de pacientes y ser atendido inmediatamente. | ⭐⭐ |
 | Crypto    | [Waiting List II](Mayo/Crypto/Waiting%20List%20II) | Explotar el _Fault Attack_ en RSA para firmar una cita antes que el resto de pacientes y ser atendido inmediatamente. | ⭐⭐⭐ |
-| Web    | [CTTP](Mayo/Web/LJWT)         | WebServer en C parseando \r\n (CRLF). Configurado sólo para un endpoint que es vulnerable a path traversal. | ⭐ |
+| Web    | [CTTP](Mayo/Web/cttp)         | WebServer en C parseando \r\n (CRLF). Configurado sólo para un endpoint que es vulnerable a path traversal. | ⭐ |
 | Web    | [LJWT](Mayo/Web/LJWT)         | Recuperar la llave privada con la que se contruyen LJWTs para ingresar al sistema como administrador. Un _Linear_ JSON Web Token (JWT) es un algoritmo personalizado que utiliza un esquema afín para computar cada firma digital. Así pues, dos cuentas registradas son suficientes para recuperar la llave privada del servidor. | ⭐⭐⭐ |
 | PWN    | [Shellcode](Mayo/Pwn/shellcode)   | El programa ejecuta directamente el input por lo que se debe introducir una shellcode.  | ⭐ |
 | PWN    | [LeakMe](Mayo/Pwn/LeakMe) | Un leak típico. Dos cadenas declaradas en el stack. Se debe hacer overlapping para imprimir el contenido de ambas.  | ⭐ |
