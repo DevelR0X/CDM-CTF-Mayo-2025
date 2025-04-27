@@ -6,6 +6,8 @@ FILES = [
     "incidentes.md"
 ]
 
+PATH = "../fuentes/"
+
 # Podemos usar nuestro propio XOR u otro que queramos, lo importante es hacer XOR a nivel de bytes
 # ademas de que se reutilice a o b
 # el XOR de pwntools esta bien tambien
@@ -19,12 +21,12 @@ def decrypt_files(files):
     # Lo que se conoce como Known Plaintext Attack.
 
     known = b"Q-LOCKER v1.0 (2025)"
-    encrypted_file = open(f"ENCRYPTED_{files[0].split('.')[0]}", "rb").read()
+    encrypted_file = open(f"{PATH}ENCRYPTED_{files[0].split('.')[0]}", "rb").read()
     key = xor(known[:16], encrypted_file[:16])
 
     # Ahora desencriptamos todos los archivos
     for file in files:
-        encrypted_file = open(f"ENCRYPTED_{file.split('.')[0]}", "rb").read()
+        encrypted_file = open(f"{PATH}ENCRYPTED_{file.split('.')[0]}", "rb").read()
         decrypted_file = xor(encrypted_file, key)
 
         recovered_file = open(file, "wb")

@@ -6,8 +6,8 @@
         What happened to my computer?
         - Your important files are encrypted.
             Many of your documents, photos, videos, databases and other files are
-            no longer accessible because they have been encrypted with... ¡Quantum Physics!
+            no longer accessible because they have been encrypted with... Quantum Physics!
 
-        - Can i recover my files?
+        - Can I recover my files?
             No.
     
