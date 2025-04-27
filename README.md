@@ -4,10 +4,10 @@
 
 | Categoría | Nombre                           | Objetivo | Dificultad [⭐⭐⭐] |
 | ---       | ---                              | ---      |   ---            |
-| Crypto    | [Q-Locker](Mayo/Crypto/Q-Locker) | Explotar un _Known Plaintext Attack_ en la operación XOR, que es equivalente a la compuerta cuántica CNOT, para desencriptar archivos.       | ⭐⭐ |
-| Crypto    | [LJWT](Mayo/Crypto/LJWT)         | Recuperar la llave privada con la que se contruyen LJWTs para ingresar al sistema como administrador. Un _Linear_ JSON Web Token (JWT) es un algoritmo personalizado que utiliza un esquema afín para computar cada firma digital. Así pues, dos cuentas registradas son suficientes para recuperar la llave privada del servidor. | ⭐⭐ |
+| Misc    | [Q-Locker](Mayo/Misc/Q-Locker) | Explotar un _Known Plaintext Attack_ en la operación XOR, que es equivalente a la compuerta cuántica CNOT, para desencriptar archivos.       | ⭐⭐ |
 | Crypto    | [Waiting List I](Mayo/Crypto/Waiting%20List%20I) | Explotar el _Fermat Factorization Attack_ en RSA para firmar una cita antes que el resto de pacientes y ser atendido inmediatamente. | ⭐⭐ |
 | Crypto    | [Waiting List II](Mayo/Crypto/Waiting%20List%20II) | Explotar el _Fault Attack_ en RSA para firmar una cita antes que el resto de pacientes y ser atendido inmediatamente. | ⭐⭐⭐ |
+| Web    | [LJWT](Mayo/Web/LJWT)         | Recuperar la llave privada con la que se contruyen LJWTs para ingresar al sistema como administrador. Un _Linear_ JSON Web Token (JWT) es un algoritmo personalizado que utiliza un esquema afín para computar cada firma digital. Así pues, dos cuentas registradas son suficientes para recuperar la llave privada del servidor. | ⭐⭐⭐ |
 
 
 ## Contenido
