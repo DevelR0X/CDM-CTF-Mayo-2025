@@ -1,4 +1,4 @@
-# LeakMe
+# Hidden
 | Categoria | Dificultad  | Autor   |
 | ---       | ---         | ---     |
 | Pwn    | Fácil       | kub0x (powered by DevelR0X) |

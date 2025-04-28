@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "charconv": "c",
+        "string.h": "c"
+    }
+}
