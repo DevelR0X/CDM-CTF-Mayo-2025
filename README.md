@@ -10,6 +10,7 @@
 | Crypto    | [Waiting List II](Mayo/Crypto/Waiting%20List%20II) | Explotar el _Fault Attack_ en RSA para firmar una cita antes que el resto de pacientes y ser atendido inmediatamente. | ⭐⭐⭐ |
 | Web    | [CTTP](Mayo/Web/cttp)         | WebServer en C parseando \r\n (CRLF). Configurado sólo para un endpoint que es vulnerable a path traversal. | ⭐ |
 | Web    | [LJWT](Mayo/Web/LJWT)         | Recuperar la llave privada con la que se contruyen LJWTs para ingresar al sistema como administrador. Un _Linear_ JSON Web Token (JWT) es un algoritmo personalizado que utiliza un esquema afín para computar cada firma digital. Así pues, dos cuentas registradas son suficientes para recuperar la llave privada del servidor. | ⭐⭐⭐ |
+| Web    | [XSS-NinjaWAF](Mayo/Web/xss-ninjawaf) | Explotar un XSS para el robo de cookies de sesión aplicando técnicas de evasión de WAF.  | ⭐⭐ |
 | PWN    | [Shellcode](Mayo/Pwn/shellcode)   | El programa ejecuta directamente el input por lo que se debe introducir una shellcode.  | ⭐ |
 | PWN    | [LeakMe](Mayo/Pwn/LeakMe) | Un leak típico. Dos cadenas declaradas en el stack. Se debe hacer overlapping para imprimir el contenido de ambas.  | ⭐ |
 | PWN    | [Negative](Mayo/Pwn/negative) | Se declara un buffer y un byte 'admin' en 0x0. Si éste se pone en 0x1 nos entrega la flag. El programa acepta una posición donde escribiremos dentro del buffer. Si la posición se desborda podemos escribir arriba del buffer (posición negativa) y sobreescribir el byte 'admin' a 0x1.  | ⭐⭐ |
@@ -30,3 +31,4 @@ Cada desafío contiene las siguientes carpetas y archivos:
 
 * Daniel Espinoza (D-Cryp7), _DevelR0X_.
 * Borja Gomez (kub0x), _DevelR0X_.
+* Esteban Vaquero (Esteban XFCE), _DevelR0X_.
