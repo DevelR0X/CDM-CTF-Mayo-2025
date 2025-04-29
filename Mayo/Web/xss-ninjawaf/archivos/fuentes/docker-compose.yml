@@ -1,0 +1,20 @@
+services:
+  server:
+    build:
+      context: ./server
+    container_name: server
+    environment:
+      - 'FLAG_CONTENT=CDM{wh3n_w4f_s41d_n0_scr1ptz_i_s4id_h0ld_my_b34r}'
+      - 'DB_NAME=755a6937-e986-4a36-9d07-c6241cdc21a6.db'
+    ports:
+      - '5698:80'
+    restart: always
+  client:
+    build:
+      context: ./client
+    container_name: client
+    environment:
+      - 'TARGET_URL=http://server/index.php?__b=3b93148f-1f52-4467-a6b0-e525fb6a9afe'
+    restart: always
+    depends_on:
+      - server
