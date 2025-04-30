@@ -2,7 +2,7 @@
 
 | Categoría | Dificultad | Autor                              |
 |-----------|------------|------------------------------------|
-| Web       | Media      | Esteban XFCE (powered by DevelR0X) |
+| Web       | Medio      | Esteban XFCE (powered by DevelR0X) |
 
 ## Descripción
 
@@ -10,4 +10,4 @@ En el Hospital Eloísa Díaz, un atacante ha logrado acceder a los resultados de
 
 ## Formato de la flag
 
-`CDM{hash}`
+`CDM{texto}`
